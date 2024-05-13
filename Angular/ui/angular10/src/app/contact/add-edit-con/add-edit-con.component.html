@@ -1,0 +1,45 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+
+<div class="form-froup row" style="width: 60%">
+
+    <label class="col-sm-2 col-form-label">Contact Name</label>
+    <div class ="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="ContactName"
+        placeholder="Enter Contact Name">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Phone Number</label>
+    <div class ="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="PhoneNumber"
+        placeholder="Enter Phone Number">
+    </div>
+
+    <label class="col-sm-2 col-form-label">User</label>
+    <div class ="col-sm-10">
+        <select class="form-control" [(ngModel)]="User">
+            <option>--Select--</option>
+            <option *ngFor="let userName of UsersList">
+                {{userName.UserName}}
+            </option>
+        </select>
+    </div>
+
+    <label class="col-sm-2 col-form-label">Email</label>
+    <div class ="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Email"
+        placeholder="Enter Email">
+    </div>
+
+</div>
+<div class="ml-3 bd-highlight" style="width: 40%;">
+    <img [src]=PhotoFilePath height="250px;" width="200px;">
+    <input type="file" (change)="uploadPhoto($event)" class="mt-2"/>
+</div>
+</div>
+<button (click)="addContact()" *ngIf="con.ContactId==0" class ="btn btn-primary">
+    Add
+</button>
+
+<button (click)="updateContact()" *ngIf="con.ContactId!=0" class ="btn btn-primary">
+    Update
+</button>
