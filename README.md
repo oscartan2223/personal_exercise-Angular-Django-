@@ -1,4 +1,4 @@
-# Contact management System
+# Contact Management System
 
 
 ## Installation and Setup
